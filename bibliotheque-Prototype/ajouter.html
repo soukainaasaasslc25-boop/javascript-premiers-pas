@@ -57,6 +57,12 @@ form.style.gap = "10px";
     disponible: document.getElementById("disponible").checked
   };
 
+     if (isNaN(code) || !titre || !auteur || isNaN(annee) || isNaN(prixDh)) {
+        alert("Veuillez remplir correctement tous les champs !");
+        return; // Stop la soumission si un champ est vide ou invalide
+    }
+    livre = { code, titre, auteur, annee, prixDh, disponible };
+
   if (window.opener && !window.opener.closed) {
     window.opener.ajouterLivre(livre); // Envoie le livre à catalogue.html
     alert("Livre ajouté !");
