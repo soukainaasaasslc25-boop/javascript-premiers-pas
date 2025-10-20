@@ -12,7 +12,7 @@ let bibliotheque = [
 
 // Ouvrir ajouter.html
 function ouvrirAjouter() {
-    window.open("ajouter.html", "AjouterLivre", "width=500,height=500");
+    window.open("ajouter.html", "AjouterLivre", "width=500,height=500 ,position=center");
 }
 
 // Afficher la liste des livres
@@ -45,7 +45,7 @@ function AfficherlistesLivres() {
         };
 
         if (!livre.disponible) {
-            carte.style.background = "#ffe5e5";
+            carte.style.background = "#c79777ff";
         }else{
             carte.style.background = "#ffffffff";
         }
