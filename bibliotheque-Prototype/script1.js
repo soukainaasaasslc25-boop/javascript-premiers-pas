@@ -12,7 +12,7 @@ let bibliotheque = [
 
 // Ouvrir ajouter.html
 function ouvrirAjouter() {
-    window.open("ajouter.html", "AjouterLivre", "width=400,height=500");
+    window.open("ajouter.html", "AjouterLivre", "width=500,height=500");
 }
 
 // Afficher la liste des livres
