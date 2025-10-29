@@ -12,7 +12,7 @@ let bibliotheque = [
 
 // Ouvrir ajouter.html
 function ouvrirAjouter() {
-    window.open("ajouter.html", "AjouterLivre", "width=500,height=500 ,position=center");
+    window.open("ajouter.html", "AjouterLivre", "width=500,height=500");
 }
 
 // Afficher la liste des livres
@@ -70,8 +70,7 @@ function AfficherlistesLivres() {
         btnAction.onclick = () => changerDisponibilite(livre.code);
         // style
         btnAction.style.backgroundColor =  livre.disponible ? "#a34706ff" : "#fb9700ff";
-        btnAction.style.border="none";
-        btnAction.style.borderRadius="5px";
+     
 
         const btnSupprimer = document.createElement("button");
         btnSupprimer.textContent = "Supprimer";
@@ -80,9 +79,7 @@ function AfficherlistesLivres() {
         // style
          btnSupprimer.style.backgroundColor = "#784f2cff";
         btnSupprimer.style.color = "#fff";
-        btnSupprimer.style.border = "none";
-        btnSupprimer.style.borderRadius = "5px";
-        btnSupprimer.style.padding = "5px 10px";
+      ;
        
 
 
