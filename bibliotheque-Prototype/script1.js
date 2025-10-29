@@ -1,10 +1,4 @@
 
-    
-document.body.style.backgroundImage = "url('img/Zoom Background White Bookshelf and Window, Virtual Home Office Background for Teams Meetings, Work From Home Minimalist Shelves Backdrop.jpg')";
-document.body.style.backgroundSize = "cover";       
-document.body.style.backgroundRepeat = "no-repeat"; 
-document.body.style.backgroundPosition = "center";
-
 let bibliotheque = [
     {code:1, titre:"histoire", auteur:"gaclin", annee:2006, prixDh:200, disponible:true},
     {code:2, titre:"history", auteur:"gaclin", annee:2006, prixDh:256, disponible:true}
@@ -30,19 +24,6 @@ function AfficherlistesLivres() {
         carte.style.width = "250px";
         carte.style.display = "inline-block";
         carte.style.verticalAlign = "top";
-        carte.style.boxShadow = "3px 3px 10px rgba(0,0,0,0.2)";
-        carte.style.transition = "transform 0.2s";
-
-
-       
-        carte.onmouseover = () => {
-            carte.style.transform = "scale(1.05)";
-            carte.style.boxShadow = "5px 5px 15px rgba(0,0,0,0.3)";
-        };
-        carte.onmouseout = () => {
-            carte.style.transform = "scale(1)";
-            carte.style.boxShadow = "3px 3px 10px rgba(0,0,0,0.2)";
-        };
 
         if (!livre.disponible) {
             carte.style.background = "#c79777ff";
