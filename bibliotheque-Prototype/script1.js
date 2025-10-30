@@ -62,9 +62,6 @@ function AfficherlistesLivres() {
         btnSupprimer.style.color = "#fff";
       ;
        
-
-
-
         actions.appendChild(btnAction);
         actions.appendChild(btnSupprimer);
         carte.appendChild(actions);
