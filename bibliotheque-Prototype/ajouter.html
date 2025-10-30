@@ -1,80 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>catalogue et ajouter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogue et Ajouter</title>
 </head>
 <body>
-    
-   
-   
-    <h3>Ajouter une nouvaux</h3>
-    <form action="" id="form">
-        <label for="code"> code </label> 
 
-        <input type="number" id="code">
+  <h3>Ajouter un nouveau livre</h3>
+  <form id="form">
+    <label for="code">Code</label>
+    <input type="number" id="code">
 
-        <label for="Auteur"> Auteur </label> 
-        <input type="text" id="Auteur" placeholder="  Auteur">
-        <label for="Titre"> Titre </label> 
-        <input type="text" id="Titre" placeholder=" le titre de livre">  
-        <label for="Annee"> Annee </label> 
-        <input type="text" id="Annee" placeholder="Annee de publication">
-        <label for="Prix"> Prix </label> 
-        <input type="number" id="Prix" placeholder="Prix de livre en DH">
-        <label for="disponible">disponible</label>
-        <input type="checkbox" name="disponible" id="disponible">
+    <label for="Auteur">Auteur</label>
+    <input type="text" id="Auteur" placeholder="Auteur">
 
-         <button type="submit">Ajouter</button>
-        
-        </form>
-           
-    
+    <label for="Titre">Titre</label>
+    <input type="text" id="Titre" placeholder="Le titre du livre">
 
-    <script>
+    <label for="Annee">Année</label>
+    <input type="number" id="Annee" placeholder="Année de publication">
 
-  let form =document.getElementById("form");
-form.style.border = "2px solid #d88837ff";
-form.style.padding = "20px";
-form.style.borderRadius = "10px";
-form.style.width = "300px";
-form.style.backgroundColor = "#f9f9f9";
-form.style.display = "flex";
-form.style.flexDirection = "column";
-form.style.gap = "10px";
+    <label for="Prix">Prix</label>
+    <input type="number" id="Prix" placeholder="Prix du livre en DH">
 
+    <label for="disponible">Disponible</label>
+    <input type="checkbox" id="disponible">
 
-    document.getElementById("form").onsubmit = function(e) {
-  e.preventDefault();
+    <button type="submit">Ajouter</button>
+  </form>
 
-  const livre = {
-    code: parseInt(document.getElementById("code").value),
-    titre: document.getElementById("Titre").value,
-    auteur: document.getElementById("Auteur").value,
-    annee: parseInt(document.getElementById("Annee").value),
-    prixDh: parseFloat(document.getElementById("Prix").value),
-    disponible: document.getElementById("disponible").checked
-  };
+  <script>
+    const form = document.getElementById("form");
 
-     if (isNaN(code) || !titre || !auteur || isNaN(annee) || isNaN(prixDh)) {
+    form.style.border = "2px solid #d88837";
+    form.style.padding = "20px";
+    form.style.borderRadius = "10px";
+    form.style.width = "300px";
+    form.style.backgroundColor = "#f9f9f9";
+    form.style.display = "flex";
+    form.style.flexDirection = "column";
+    form.style.gap = "10px";
+
+    form.onsubmit = function(e) {
+      e.preventDefault();
+
+      const livre = {
+        code: parseInt(document.getElementById("code").value),
+        titre: document.getElementById("Titre").value.trim(),
+        auteur: document.getElementById("Auteur").value.trim(),
+        annee: parseInt(document.getElementById("Annee").value),
+        prixDh: parseFloat(document.getElementById("Prix").value),
+        disponible: document.getElementById("disponible").checked
+      };
+
+      if (isNaN(livre.code) || !livre.titre || !livre.auteur || isNaN(livre.annee) || isNaN(livre.prixDh)) {
         alert("Veuillez remplir correctement tous les champs !");
-        return; // Stop la soumission si un champ est vide ou invalide
-    }
-    livre = { code, titre, auteur, annee, prixDh, disponible };
+        return;
+      }
 
-  if (window.opener && !window.opener.closed) {
-    window.opener.ajouterLivre(livre); // Envoie le livre à catalogue.html
-    alert("Livre ajouté !");
-    window.close(); // Ferme automatiquement la fenêtre
-  } else {
-    alert("La page catalogue n'est pas ouverte !");
-  }
-};
-    </script>
-
-
+      if (window.opener && !window.opener.closed) {
+        window.opener.ajouterLivre(livre);
+        alert("Livre ajouté !");
+        window.close();
+      } else {
+        alert("La page catalogue n'est pas ouverte !");
+      }
+    };
+  </script>
 
 </body>
 </html>
