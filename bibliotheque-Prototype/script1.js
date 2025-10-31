@@ -47,7 +47,7 @@ function AfficherlistesLivres() {
 
         const btnAction = document.createElement("button");
         btnAction.textContent = livre.disponible ? "Emprunter" : "Rendre";
-        btnAction.className = livre.disponible ? "btnEmprunter" : "btnRendre";
+        
         btnAction.onclick = () => changerDisponibilite(livre.code);
         // style
         btnAction.style.backgroundColor =  livre.disponible ? "#a34706ff" : "#fb9700ff";
@@ -55,7 +55,7 @@ function AfficherlistesLivres() {
 
         const btnSupprimer = document.createElement("button");
         btnSupprimer.textContent = "Supprimer";
-        btnSupprimer.className = "btnSupprimer";
+        
         btnSupprimer.onclick = () => supprimerLivre(livre.code);
         // style
          btnSupprimer.style.backgroundColor = "#784f2cff";
