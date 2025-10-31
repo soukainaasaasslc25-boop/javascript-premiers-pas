@@ -47,7 +47,10 @@ function AfficherlistesLivres() {
 
         const btnAction = document.createElement("button");
         btnAction.textContent = livre.disponible ? "Emprunter" : "Rendre";
-        btnAction.onclick = () => changerDisponibilite(livre.code);
+        btnAction.onclick = () => {
+          livre.disponible = !livre.disponible;
+          AfficherlistesLivres();
+        }
         // style
         btnAction.style.backgroundColor =  livre.disponible ? "#a34706ff" : "#fb9700ff";
      
@@ -71,11 +74,11 @@ function AfficherlistesLivres() {
 }
 
 // Changer la disponibilité
-function changerDisponibilite(code) {
-    const livre = bibliotheque.find(l => l.code === code);
-    if (livre) livre.disponible = !livre.disponible;
-    AfficherlistesLivres();
-}
+// function changerDisponibilite(code) {
+//     const livre = bibliotheque.find(l => l.code === code);
+//     if (livre) livre.disponible = !livre.disponible;
+//     AfficherlistesLivres();
+// }
 document.getElementById("search").oninput = function () {
   const mot = this.value.toLowerCase();
   const cartes = document.getElementsByClassName("carte");
