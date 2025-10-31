@@ -1,5 +1,5 @@
 // 1. Créer un tableau de fruits
-let fruits = ["pomme", "banane", "cerise"];
+let fruits = [12, "banane", "cerise"];
 console.log("Tableau initial :", fruits);
 
 // 2. Ajouter et supprimer
@@ -21,7 +21,7 @@ fruits.shift();
 console.log("Après shift :", fruits);
 
 // 5. Utiliser splice pour insérer des éléments
-fruits.splice(1, 0, "ananas");
+fruits.splice(1, 1, "ananas");
 console.log("Après splice :", fruits);
 
 // 6. Parcours du tableau
@@ -38,4 +38,14 @@ let produits = [
 ];
 
 console.log("Liste des produits :");
-produits.forEach((p) => console.log(`${p.nom} → ${p.prix} DH`));
+produits.forEach((produit) => console.log(`${produit.nom} → ${produit.prix} DH`));
+
+console.log("Boucle for :");
+for (let i = 0; i < produits.length; i++) {
+  if (i==1) {
+    continue;
+    
+  }
+  console.log(`${produits[i].nom} → ${produits[i].prix} DH`);
+}
+

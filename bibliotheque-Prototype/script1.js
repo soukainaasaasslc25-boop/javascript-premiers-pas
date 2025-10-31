@@ -47,7 +47,6 @@ function AfficherlistesLivres() {
 
         const btnAction = document.createElement("button");
         btnAction.textContent = livre.disponible ? "Emprunter" : "Rendre";
-        
         btnAction.onclick = () => changerDisponibilite(livre.code);
         // style
         btnAction.style.backgroundColor =  livre.disponible ? "#a34706ff" : "#fb9700ff";
@@ -93,7 +92,12 @@ document.getElementById("search").oninput = function () {
 
 // Supprimer un livre
 function supprimerLivre(code) {
-    bibliotheque = bibliotheque.filter(l => l.code !== code);
+   for (let i = 0; i < bibliotheque.length; i++) {
+  if (bibliotheque[i].code === code) {
+    bibliotheque.splice(i, 1); 
+    break;
+  }
+}
     AfficherlistesLivres();
 }
 
