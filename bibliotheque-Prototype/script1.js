@@ -73,12 +73,7 @@ function AfficherlistesLivres() {
     afficherstatus();
 }
 
-// Changer la disponibilité
-// function changerDisponibilite(code) {
-//     const livre = bibliotheque.find(l => l.code === code);
-//     if (livre) livre.disponible = !livre.disponible;
-//     AfficherlistesLivres();
-// }
+
 document.getElementById("search").oninput = function () {
   const mot = this.value.toLowerCase();
   const cartes = document.getElementsByClassName("carte");
